@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle'
 import React ,{useEffect,useState } from 'react'
 import './Home.css';
 import axios from 'axios';
@@ -10,7 +12,7 @@ export default function Home()
 
     const loadNews = async () => {
       try {
-        const response = await axios.get(`https://newsapi.org/v2/everything?q=${searchQuery}&from=2023-11-12&sortBy=publishedAt&{process.env.REACT_APP_API_KEY}`);
+        const response = await axios.get(`https://newsapi.org/v2/everything?q=${searchQuery}&from=2023-11-21&sortBy=publishedAt&apiKey=a24de9c871d34cbf868701ab1a6be4a7`);
         
         setNews(response.data.articles);
       } catch (err) {
